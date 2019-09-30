@@ -18,7 +18,6 @@ resource "azurerm_frontdoor" "main" {
       name                                    = "${lookup(host.value, "name")}"
       host_name                               = "${lookup(host.value, "name")}.${var.custom_domain_name}"
       custom_https_provisioning_enabled       = true
-      web_application_firewall_policy_link_id = "${lookup(host.value, "name")}"
       custom_https_configuration {
         certificate_source = "FrontDoor"
       }
